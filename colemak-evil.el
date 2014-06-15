@@ -164,8 +164,7 @@ Shortcuts:
     (setq maps (list evil-normal-state-map
                      evil-visual-state-map
                      evil-insert-state-map
-                     evil-emacs-state-map
-		     evil-motion-state-map)))
+                     evil-motion-state-map)))
   (while maps
     (define-key (pop maps) key def)))
 
@@ -173,14 +172,12 @@ Shortcuts:
 (defun set-in-all-evil-states-but-insert (key def)
   (set-in-all-evil-states key def (list evil-normal-state-map
 				   evil-visual-state-map
-				   evil-emacs-state-map
 				   evil-motion-state-map)))
 
 
 (defun set-in-all-evil-states-but-insert-and-motion (key def)
-  (set-in-all-evil-states key def (list evil-normal-state-map
-				   evil-visual-state-map
-				   evil-emacs-state-map)))
+  (set-in-all-evil-states
+   key def (list evil-normal-state-map evil-visual-state-map)))
 
 ;;; No insert-state alt-navigation remappings (they would clobber
 ;;; Emacs shortcuts, and Emacs has its own navigation commands that
