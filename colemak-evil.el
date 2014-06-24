@@ -190,12 +190,6 @@ Shortcuts:
 (set-in-all-evil-states-but-insert "i" 'evil-forward-char)
 (define-key evil-operator-state-map "i" 'evil-forward-char)
 
-;;; Turbo navigation mode
-(set-in-all-evil-states-but-insert "I" '(lambda () (interactive) (evil-forward-char 5)))
-(set-in-all-evil-states-but-insert "N" '(lambda () (interactive) (evil-backward-char 5)))
-(set-in-all-evil-states-but-insert "E" '(lambda () (interactive) (evil-next-line 5)))
-(set-in-all-evil-states-but-insert "U" '(lambda () (interactive) (evil-previous-line 5)))
-
 ;;; Beginning/end of line (home/end)
 ;; Use back-to-indentation instead of evil-beginning-of-line so that
 ;; cursor ends up at the first non-whitespace character of a line. 0
