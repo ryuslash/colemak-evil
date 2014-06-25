@@ -163,16 +163,14 @@ Shortcuts:
   (unless maps
     (setq maps (list evil-normal-state-map
                      evil-visual-state-map
-                     evil-insert-state-map
-                     evil-motion-state-map)))
+                     evil-insert-state-map)))
   (while maps
     (define-key (pop maps) key def)))
 
 
 (defun set-in-all-evil-states-but-insert (key def)
   (set-in-all-evil-states key def (list evil-normal-state-map
-				   evil-visual-state-map
-				   evil-motion-state-map)))
+				   evil-visual-state-map)))
 
 
 (defun set-in-all-evil-states-but-insert-and-motion (key def)
@@ -188,7 +186,6 @@ Shortcuts:
 (set-in-all-evil-states-but-insert "e" 'evil-next-line)
 (set-in-all-evil-states-but-insert "n" 'evil-backward-char)
 (set-in-all-evil-states-but-insert "i" 'evil-forward-char)
-(define-key evil-operator-state-map "i" 'evil-forward-char)
 
 ;;; Beginning/end of line (home/end)
 ;; Use back-to-indentation instead of evil-beginning-of-line so that
